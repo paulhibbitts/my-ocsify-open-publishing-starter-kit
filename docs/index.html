@@ -106,15 +106,11 @@
         function(hook, vm) {
 
           hook.beforeEach(function (html) {
-            if (/githubusercontent\.com/.test(vm.route.file)) {
+  
               url = vm.route.file
                 .replace('raw.githubusercontent.com', 'github.com')
                 .replace(/\/master/, '/blob/master')
-            } else {
-              // Replace the below URL variable with your own Repository URL path up to, and including, '/docs'
-              // For example, 'https://github.com/YourGitHubUsername/YourRepositoryName/tree/master/docs'
-              url = 'https://github.com/hibbittsdesign/my-ocsify-open-publishing-starter-kit/tree/master/docs' +'/' + vm.route.file
-            }
+            
             var editHtml = '[:memo: Edit this Page on GitHub](' + url + ')\n'
 
             if (!(getParameterByName('hidegithublink') === 'true')) {
