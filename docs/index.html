@@ -107,6 +107,8 @@
 
           hook.beforeEach(function (html) {
   
+            console.log(vm.route.file)
+            
               url = vm.route.file
                 .replace('raw.githubusercontent.com', 'github.com')
                 .replace(/\/master/, '/blob/master')
